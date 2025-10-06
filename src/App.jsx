@@ -1,16 +1,16 @@
 import './App.css'
-import { ProductCard } from './components/productCard'
 
 function App() {
   
 
   return (
     <>
+      <div className='h-[700px] w-[700px] border-5 flex justify-center items-center'>
+        <div className='h-[200px] w-[300px] bg-blue-400 flex justify-center items-center relative'> 
+          <button className='bg-red-700 absolute top-0 right-0'>x</button>
+          <h1 className='text-4xl'>This is a product</h1></div>
+      </div>
       
-      <h1 className='text-red-700'>Nethara Vidmantha</h1>
-
-      <ProductCard name="Apple iPad" price="$499" image="https://www.apple.com/assets-www/en_WW/ipad/product_tile/xlarge/ipad_pro_1df5448cd_2x.png"/>
-      <ProductCard name="Macbook Air" price="$899" image="https://www.apple.com/assets-www/en_WW/mac/product_tile/xlarge/mba_13_15_2fb165671.png"/>
       
       
     </>
