@@ -1,7 +1,18 @@
+import axios from "axios"
+import { useState } from "react"
+
 export default function LoginPage(){
 
-    function login(){
+    const [email,setEmail] = useState("")
+    const [password,setPassword] = useState("")
 
+
+    async function login(){
+        const response = await axios.post(import.meta.env.VITE_API_URL+"/users/login",{
+            email : email,
+            password : password
+        })
+        console.log(response.data)
     }
 
     return(
@@ -11,8 +22,18 @@ export default function LoginPage(){
             </div>
             <div className="w-[50%] h-full flex justify-center items-center">
                 <div className="w-[500px] h-[500px] backdrop-blur-lg shadow-2xl rounded-2xl flex flex-col justify-center items-center gap-[20px]">
-                    <input className="w-[400px] h-[40px] bg-white" />
-                    <input className="w-[400px] h-[40px] bg-white" />
+
+                    <input onChange={
+                        (e)=>{
+                            setEmail(e.target.value)
+                        }
+                    }className="w-[400px] h-[40px] bg-white" />
+                    <input onChange={
+                        (e)=>{
+                            setPassword(e.target.value)
+                        }
+                    }className="w-[400px] h-[40px] bg-white" />
+
                     <button onClick={login} className="bg-red-900 w-[400px] h-[40px]">
                         Login
                     </button>
