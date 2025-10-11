@@ -5,7 +5,7 @@ export default function Header(){
 
             <div className="w-full h-full flex relative">
 
-                <img src="/logo.png" className="h-[100%] px-[30px] py-[10px] absolute" alt="logo.png" />
+                <img src="/logo.png" className="hidden lg:flex h-full absolute w-[170px] left-0  object-cover" />
                 
                 <div className="h-full w-full flex justify-center items-center gap-[20px] text-lg" >
                     <a href="/">Home</a>
