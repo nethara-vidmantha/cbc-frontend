@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Header(){
     return(
 
@@ -8,10 +10,10 @@ export default function Header(){
                 <img src="/logo.png" className="hidden lg:flex h-full absolute w-[170px] left-0  object-cover" />
                 
                 <div className="h-full w-full flex justify-center items-center gap-[20px] text-lg" >
-                    <a href="/">Home</a>
-                    <a href="/products">Products</a>
-                    <a href="/about">About</a>
-                    <a href="/contact">Contact</a>
+                    <Link to="/">Home</Link>
+                    <Link to="/products">Products</Link>
+                    <Link to="/about">About</Link>
+                    <Link to="/contact">Contact</Link>
                 </div>
             </div>
         </header>

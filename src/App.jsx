@@ -3,6 +3,7 @@ import AdminPage from './pages/adminPage.jsx'
 import HomePage from './pages/homePage.jsx'
 import TestPage from './pages/test.jsx'
 import LoginPage from './pages/loginPage.jsx'
+import { Toaster } from 'react-hot-toast'
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
 
       <BrowserRouter>
         <div className='w-full h-[100vh]'>  {/*Hypothetical kotuw*/} 
-
+        <Toaster position='top-right'/>
           <Routes path="/">   {/*meke athule tyena kisi deyk stira na yana path eka anuwa wens wenw*/}
             
             <Route path="/*" element={<HomePage/>}/>             {/*meewa thamai path*/ }
