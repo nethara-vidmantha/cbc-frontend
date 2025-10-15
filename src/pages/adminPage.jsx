@@ -4,6 +4,7 @@ import { IoMdCart } from "react-icons/io";
 import { BsBoxSeamFill } from "react-icons/bs";
 import { HiMiniUsers } from "react-icons/hi2";
 import AdminProductPage from "./admin/adminProductPage";
+import AddProductPage from "./admin/adminAddNewProduct";
 
 export default function AdminPage(){
     return(
@@ -41,6 +42,7 @@ export default function AdminPage(){
                 <Route path="/" element={<h1>Dashbord</h1>}/>
                 <Route path="/products" element={<AdminProductPage/>}/>
                 <Route path="/orders" element={<h1>Orders</h1>}/>
+                <Route path="/add-product" element={<AddProductPage/>}/>
 
             </Routes>
             </div>
