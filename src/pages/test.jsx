@@ -1,41 +1,25 @@
-import { set } from "mongoose";
 import { useState } from "react";
+import mediaUpload from "../utils/mediaUpload";
+
+
 
 export default function TestPage(){
+    const [file,setFile] = useState(null)
 
-    const [count,setCount] = useState(10 )
-
-    
+    async function uploadImage(){
+        
+        const link = await mediaUpload(file)
+        console.log(link)
+    }
 
     return(
 
         <div className="w-full h-full flex justify-center items-center">
-            <div className="w-[500px] h-[500px] bg-amber-100 text-white flex justify-center items-center gap-[20px]">
-                
-                <button onClick={
-                    ()=>{
-                        console.log("Increasing...")
-                        setCount(count+1)
-                        
-                    }
-                } className="w-[100px] h-[40px] bg-accent rounded-lg">
-                    +
-                </button>
-
-                <span className="text-accent text-5xl ">{count}</span>
-
-                <button onClick={
-                    ()=>{
-                        console.log("Decreasing...")
-                        setCount(count-1)
-                        
-                    }
-                }className="w-[100px] h-[40px] bg-accent rounded-lg ">
-                    -
-                </button>
-
-
-            </div>
+            <input type="file" onChange={
+                (e)=>{
+                    setFile(e.target.files[0])
+                }}/>   
+                <button className="bg-blue-700 text-white p-2 rounded-2xl" onClick={uploadImage}> Upload</button>
         </div>
     )
 }
