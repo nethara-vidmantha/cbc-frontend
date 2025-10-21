@@ -1,32 +1,32 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import AdminPage from './pages/adminPage.jsx'
-import HomePage from './pages/homePage.jsx'
-import TestPage from './pages/test.jsx'
-import LoginPage from './pages/loginPage.jsx'
-import { Toaster } from 'react-hot-toast'
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProductCard from "./components/productCard";
+import AdminPage from "./pages/adminPage";
+import HomePage from "./pages/homePage";
+import TestPage from "./pages/test";
+import LoginPage from "./pages/loginPage";
+import { Toaster } from "react-hot-toast";
+import RegisterPage from "./pages/registerPage";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import ForgetPassword from "./pages/forget-password";
 
 function App() {
-  
-
-  return (
-
-      <BrowserRouter>
-        <div className='w-full h-[100vh]'>  {/*Hypothetical kotuw*/} 
-        <Toaster position='top-right'/>
-          <Routes path="/">   {/*meke athule tyena kisi deyk stira na yana path eka anuwa wens wenw*/}
-            
-            <Route path="/*" element={<HomePage/>}/>             {/*meewa thamai path*/ }
-            <Route path="/register" element={<h1>Register Page</h1>}/>
-            <Route path="/login" element={<LoginPage/>}/>
-            <Route path="/admin/*" element={<AdminPage/>}/>             {/*admin eken psse mona tibbt admin kyn ek load wenw * eken kynne eka*/}
-            <Route path="/test" element={<TestPage/>}/> 
-          </Routes>
-          
-        </div>
-      </BrowserRouter>
-
-  )
+	return (
+		<BrowserRouter>
+			<GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+				<div className="w-full h-[100vh] ">
+					<Toaster position="top-right" />
+					<Routes path="/">
+						<Route path="/*" element={<HomePage />} />
+						<Route path="/register" element={<RegisterPage />} />
+						<Route path="/forget-password" element={<ForgetPassword/>} />
+						<Route path="/login" element={<LoginPage />} />
+						<Route path="/admin/*" element={<AdminPage />} />
+						<Route path="/test" element={<TestPage />} />
+					</Routes>
+				</div>
+			</GoogleOAuthProvider>
+		</BrowserRouter>
+	);
 }
 
-export default App
+export default App;
